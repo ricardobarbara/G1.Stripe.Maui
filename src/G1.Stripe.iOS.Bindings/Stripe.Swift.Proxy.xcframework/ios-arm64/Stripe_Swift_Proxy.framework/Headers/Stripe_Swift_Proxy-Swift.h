@@ -534,6 +534,7 @@ SWIFT_CLASS_NAMED("TSPSPaymentOption")
 @end
 
 @class UIViewController;
+@class NSError;
 SWIFT_CLASS_NAMED("TSPSPaymentSheet")
 @interface TSPSPaymentSheet : NSObject
 - (nonnull instancetype)initWithPaymentIntentClientSecret:(NSString * _Nonnull)paymentIntentClientSecret configuration:(TSPSConfiguration * _Nonnull)configuration;

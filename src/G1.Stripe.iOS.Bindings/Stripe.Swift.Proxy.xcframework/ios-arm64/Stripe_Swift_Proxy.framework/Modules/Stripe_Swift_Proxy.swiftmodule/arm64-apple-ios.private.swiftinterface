@@ -36,7 +36,7 @@ import _SwiftConcurrencyShims
   @objc convenience public init(paymentIntentClientSecret: Swift.String, configuration: Stripe_Swift_Proxy.TSPSConfiguration)
   @objc convenience public init(setupIntentClientSecret: Swift.String, configuration: Stripe_Swift_Proxy.TSPSConfiguration)
   @objc public static func resetCustomer()
-  @objc public func present(from presentingViewController: UIKit.UIViewController, completion: @escaping (Stripe_Swift_Proxy.TSPSPaymentSheetResult, (any Swift.Error)?) -> Swift.Void)
+  @objc public func present(from presentingViewController: UIKit.UIViewController, completion: @escaping (Stripe_Swift_Proxy.TSPSPaymentSheetResult, Foundation.NSError?) -> Swift.Void)
   @objc override dynamic public init()
   @objc deinit
 }

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Stripe_Swift_Proxy-Swift.h</key>
 		<data>
-		ZhG+s1VzxltO8ug9AzF7KTeQuSk=
+		d8gQ0DoogZ3qGHSPVJGCtVKcTEA=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -14,11 +14,11 @@
 		</data>
 		<key>Modules/Stripe_Swift_Proxy.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		FFD9bUifwxTGROgN1qAvvnyq4Sw=
+		w290xrnSvu/EEIjYrvMzGvZaxDA=
 		</data>
 		<key>Modules/Stripe_Swift_Proxy.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		oUnfWR8LzVJvy0jgXRzb6kvHG2U=
+		psf36+JP3v0IBoV4q8D9vI/JSys=
 		</data>
 		<key>Modules/Stripe_Swift_Proxy.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -26,19 +26,19 @@
 		</data>
 		<key>Modules/Stripe_Swift_Proxy.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		oUnfWR8LzVJvy0jgXRzb6kvHG2U=
+		psf36+JP3v0IBoV4q8D9vI/JSys=
 		</data>
 		<key>Modules/Stripe_Swift_Proxy.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		cCnHV1/NaGFRh3tFOaRVxouCVXg=
+		g5g/vBzPiv1v0+VgZDO1e3Bafhg=
 		</data>
 		<key>Modules/Stripe_Swift_Proxy.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		FFD9bUifwxTGROgN1qAvvnyq4Sw=
+		w290xrnSvu/EEIjYrvMzGvZaxDA=
 		</data>
 		<key>Modules/Stripe_Swift_Proxy.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		8eYwtmCNE1i14c+6NHOgNaZergs=
+		htdM52i3KsH9A22VDClIP5W8vTE=
 		</data>
 		<key>Modules/Stripe_Swift_Proxy.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/Stripe_Swift_Proxy.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		8eYwtmCNE1i14c+6NHOgNaZergs=
+		htdM52i3KsH9A22VDClIP5W8vTE=
 		</data>
 		<key>Modules/Stripe_Swift_Proxy.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		tgwvo1OSsXU+KRf19Hh0FGyvWBg=
+		3PhhHbGjLNbsnMG5vS+CQXVNfFE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -63,21 +63,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aBt/OKwKpuC2OgsrIcJbMDiYU8dXOcryKRYV5JQfMX0=
+			P/iJIAX5GAzPSlH3q3QGgfZry4COtapZ1cYlIqN3H9Y=
 			</data>
 		</dict>
 		<key>Modules/Stripe_Swift_Proxy.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			M1F4b2TQOLoUxP/OzMqM68aW3mb7+nHEtcL02ML+NlQ=
+			J2bFBsS47Idl9GSVzbH7Pc2kwKvutUNCYpsXYc8ZrUE=
 			</data>
 		</dict>
 		<key>Modules/Stripe_Swift_Proxy.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hmDGi7KUVs6WGbj6gLf2sagx9uRO5BELLboG8nvC6Js=
+			vng/fqXAtV0jzirfwd5UVGb9fPWjfl4eNln5LrZUJgs=
 			</data>
 		</dict>
 		<key>Modules/Stripe_Swift_Proxy.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -91,28 +91,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hmDGi7KUVs6WGbj6gLf2sagx9uRO5BELLboG8nvC6Js=
+			vng/fqXAtV0jzirfwd5UVGb9fPWjfl4eNln5LrZUJgs=
 			</data>
 		</dict>
 		<key>Modules/Stripe_Swift_Proxy.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			O2vxHzKx+/QBANghiqX1rbjIvnJtUFawB0M7njdZCow=
+			N2c8kkgurv8SIUa8FJzYkOK3CrzIP2YvHrf6lrALLTE=
 			</data>
 		</dict>
 		<key>Modules/Stripe_Swift_Proxy.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			M1F4b2TQOLoUxP/OzMqM68aW3mb7+nHEtcL02ML+NlQ=
+			J2bFBsS47Idl9GSVzbH7Pc2kwKvutUNCYpsXYc8ZrUE=
 			</data>
 		</dict>
 		<key>Modules/Stripe_Swift_Proxy.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rXFZzRVdtVzf3zUu6fMPYi1Ij9c3I4Yj8HXm+Ow6i6Q=
+			Jpd3t8UWM/UaymwFVaoGoXOfcTB+mLYb7MmI5VnGvzg=
 			</data>
 		</dict>
 		<key>Modules/Stripe_Swift_Proxy.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -126,14 +126,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rXFZzRVdtVzf3zUu6fMPYi1Ij9c3I4Yj8HXm+Ow6i6Q=
+			Jpd3t8UWM/UaymwFVaoGoXOfcTB+mLYb7MmI5VnGvzg=
 			</data>
 		</dict>
 		<key>Modules/Stripe_Swift_Proxy.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			h7caNbs1YqJ9NpErqW8VgVJ97csbLsf0NqQrER8Nj9g=
+			f5n7BoQYotcE8l4dTQ+qfstrqsZrWHcE5dvAc2kGa3s=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -469,7 +469,7 @@ namespace Stripe
 
 		// -(void)presentFrom:(UIViewController * _Nonnull)presentingViewController completion:(void (^ _Nonnull)(enum TSPSPaymentSheetResult, int * _Nullable))completion;
 		[Export ("presentFrom:completion:")]
-		unsafe void PresentFrom (UIViewController presentingViewController, Action<TSPSPaymentSheetResult, IntPtr> completion);
+		unsafe void PresentFrom (UIViewController presentingViewController, Action<TSPSPaymentSheetResult, NSError> completion);
 	}
 
     // @interface TSPSPaymentSheetFlowController

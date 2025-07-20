@@ -24,7 +24,6 @@ public class TSPSPaymentSheet: NSObject {
     private var paymentSheet: PaymentSheet?
     
     @objc public convenience init(paymentIntentClientSecret: String, configuration: TSPSConfiguration) {
-        STPAPIClient.shared
         self.init()
         let stripeConfiguration = configuration.toStripeConfiguration()
         self.paymentSheet = PaymentSheet(paymentIntentClientSecret: paymentIntentClientSecret, configuration: stripeConfiguration)
@@ -40,7 +39,7 @@ public class TSPSPaymentSheet: NSObject {
         PaymentSheet.resetCustomer()
     }
     
-    @objc public func present(from presentingViewController: UIViewController, completion: @escaping (TSPSPaymentSheetResult, Error?) -> Void) {
+    @objc public func present(from presentingViewController: UIViewController, completion: @escaping (TSPSPaymentSheetResult, NSError?) -> Void) {
         guard let paymentSheet = self.paymentSheet else {
             completion(.failed, NSError(domain: "TSPSPaymentSheet", code: -1, userInfo: [NSLocalizedDescriptionKey: "PaymentSheet not initialized"]))
             return
@@ -52,7 +51,7 @@ public class TSPSPaymentSheet: NSObject {
                 completion(.completed, nil)
             case .canceled:
                 completion(.canceled, nil)
-            case .failed(let error):
+            case .failed(let error as NSError):
                 completion(.failed, error)
             }
         }
