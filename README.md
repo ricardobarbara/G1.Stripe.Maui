@@ -67,11 +67,10 @@ var options = new PaymentSheetOptions
 {
     ClientSecret = paymentIntentClientSecret,
     MerchantDisplayName = "My Store, Inc.",
-    EphemeralKey = ephemeralKey,
-    CustomerId = customerId
+    Customer = new PaymentSheetCustomerOptions(ephemeralKey, customerId)
 };
 
-var result = await paymentSheet.Open(options);
+var result = await paymentSheet.Open(options, cancellationToken);
 ```
 
 ### 3. Handle the Result
