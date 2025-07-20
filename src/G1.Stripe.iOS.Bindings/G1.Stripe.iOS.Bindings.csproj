@@ -8,17 +8,11 @@
 		<PackageTags>sdk_version=$(_IosSdkVersion)</PackageTags>
 		<BundleOriginalResources>true</BundleOriginalResources>
 		
-    <!--
-      Enable trim analyzers for class libraries.
-      To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
-    -->
 		<RuntimeIdentifiers>
 			ios-arm64;
 			iossimulator-x64;
 			iossimulator-arm64
 		</RuntimeIdentifiers>
-
-	
   </PropertyGroup>
 
 	<ItemGroup>

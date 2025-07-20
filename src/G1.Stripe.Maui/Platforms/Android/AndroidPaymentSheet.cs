@@ -8,17 +8,17 @@ namespace G1.Stripe.Maui.Platforms.Android;
 
 public class AndroidPaymentSheet : IPaymentSheet
 {
-    internal static void CaptureActivity(ComponentActivity activity)
+    internal void CaptureActivity(ComponentActivity activity)
     {
         _capturedActivity = activity;
-        _sheet = new PaymentSheet.Builder(new ResultCallback()).Build(activity);
+        _sheet = new PaymentSheet.Builder(new ResultCallback(this)).Build(activity);
     }
 
-    private static ComponentActivity? _capturedActivity;
+    private ComponentActivity? _capturedActivity;
 
-    private static PaymentSheet? _sheet;
+    private PaymentSheet? _sheet;
 
-    private static TaskCompletionSource<SharedPSResult>? _tcs;
+    private TaskCompletionSource<SharedPSResult>? _tcs;
 
     public void Initialize(string publishableKey)
     {
@@ -26,46 +26,47 @@ public class AndroidPaymentSheet : IPaymentSheet
         PaymentConfiguration.Init(_capturedActivity, publishableKey);
     }
 
-    public Task<SharedPSResult> Open(PaymentSheetOptions options)
+    public async Task<SharedPSResult> Open(PaymentSheetOptions options, CancellationToken ct = default)
     {
         ArgumentNullException.ThrowIfNull(_sheet);
 
-        var configurationBuilder = new PaymentSheet.Configuration.Builder(options.MerchantDisplayName) //todo Local One to DI
+        var configurationBuilder = new PaymentSheet.Configuration.Builder(options.MerchantDisplayName)
             .AllowsDelayedPaymentMethods(true); // Optional
 
-        if (!string.IsNullOrWhiteSpace(options.CustomerId) && !string.IsNullOrWhiteSpace(options.EphemeralKey))
+        if (options.Customer is { } customer)
         {
-            var customer = new PaymentSheet.CustomerConfiguration(options.CustomerId, options.EphemeralKey);
-            configurationBuilder.Customer(customer);
+            var customerConfig = new PaymentSheet.CustomerConfiguration(customer.CustomerId, customer.EphemeralKey);
+            configurationBuilder = configurationBuilder.Customer(customerConfig);
         }
 
         var configuration = configurationBuilder.Build();
         _tcs = new TaskCompletionSource<SharedPSResult>();
-
-        _sheet.PresentWithPaymentIntent(options.ClientSecret, configuration);
-
-        return _tcs.Task;
+        using (ct.Register(() => _tcs.TrySetCanceled(ct)))
+        {
+            _sheet.PresentWithPaymentIntent(options.ClientSecret, configuration);
+            return await _tcs.Task.ConfigureAwait(false);
+        }
     }
 
-    private class ResultCallback : Java.Lang.Object, IPaymentSheetResultCallback
+    private class ResultCallback(AndroidPaymentSheet sheet) : Java.Lang.Object, IPaymentSheetResultCallback
     {
         public void OnPaymentSheetResult(AndroidPaymentSheetResult paymentSheetResult)
         {
             switch (paymentSheetResult)
             {
                 case AndroidPaymentSheetResult.Canceled c:
-                    _tcs?.SetResult(new PaymentSheetResult.Canceled());
+                    sheet._tcs?.SetResult(new PaymentSheetResult.Canceled());
                     break;
 
                 case AndroidPaymentSheetResult.Failed f:
-                    _tcs?.SetResult(new PaymentSheetResult.Failed(f.Error));
+                    sheet._tcs?.SetResult(new PaymentSheetResult.Failed(f.Error));
                     break;
 
                 case AndroidPaymentSheetResult.Completed completed:
-                    _tcs?.SetResult(new PaymentSheetResult.Completed());
+                    sheet._tcs?.SetResult(new PaymentSheetResult.Completed());
                     break;
                 default:
-                    _tcs?.SetException(new ImpossiblePaymentSheetException("Result didnt match one of excpected cases"));
+                    sheet._tcs?.SetException(new ImpossiblePaymentSheetException("Result didnt match one of excpected cases"));
                     break;
             }
         }

@@ -26,5 +26,6 @@
         <PackageIcon>icon.png</PackageIcon>
         <Copyright>Generation One</Copyright>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
+			  <PackageProjectUrl>https://github.com/Generation-One/G1.Stripe.Maui</PackageProjectUrl>
     </PropertyGroup>
 </Project>

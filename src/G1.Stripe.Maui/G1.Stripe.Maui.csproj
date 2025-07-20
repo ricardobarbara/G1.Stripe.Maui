@@ -8,12 +8,8 @@
 		<Nullable>enable</Nullable>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
-
-
 		<PackageTags>ios_sdk_version=$(_IosSdkVersion);android_sdk_version=$(_AndroidSdkVersion)</PackageTags>
 	</PropertyGroup>
-
-
 
 	<ItemGroup Condition="$(TargetFramework.Contains('-android'))">
 		<ProjectReference Include="..\G1.Stripe.Android.Bindings\G1.Stripe.Android.Bindings.csproj" />
@@ -27,14 +23,6 @@
 
 	<ItemGroup Condition="$(TargetFramework.Contains('-ios'))">
 		<ProjectReference Include="..\G1.Stripe.iOS.Bindings\G1.Stripe.iOS.Bindings.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-
-		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.0" />
-	</ItemGroup>
-
-	<ItemGroup>
 	</ItemGroup>
 
 </Project>

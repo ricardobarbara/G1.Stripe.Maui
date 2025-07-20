@@ -1,4 +1,4 @@
-﻿using G1.Stripe.Maui;
+﻿using Foundation;
 using Stripe;
 
 namespace G1.Stripe.Maui.Platforms.iOS;
@@ -10,28 +10,29 @@ public class iOSPaymentSheet : IPaymentSheet
         StripeCore.STPAPIClient.SharedClient.PublishableKey = publishableKey;
     }
 
-    public async Task<PaymentSheetResult> Open(PaymentSheetOptions options)
+    public async Task<PaymentSheetResult> Open(PaymentSheetOptions options, CancellationToken ct = default)
     {
         var configuration = new TSPSConfiguration()
         {
             MerchantDisplayName = options.MerchantDisplayName,
         };
 
-        if (!string.IsNullOrWhiteSpace(options.CustomerId) && !string.IsNullOrWhiteSpace(options.EphemeralKey))
+        if(options.Customer is { } customer)
         {
-            configuration.Customer = new TSPSCustomerConfiguration(options.CustomerId, options.EphemeralKey);
+            configuration.Customer = new TSPSCustomerConfiguration(customer.CustomerId, customer.EphemeralKey);
         }
 
         var ps = new TSPSPaymentSheet(options.ClientSecret, configuration);
 
         var tcs = new TaskCompletionSource<PaymentSheetResult>();
-
-        await MainThread.InvokeOnMainThreadAsync(() => ps.PresentFrom(Platform.GetCurrentUIViewController()!, (res, _) => OnPaymentSheetResult(res, tcs)));
-        
-        return await tcs.Task;
+        using (ct.Register(() => tcs.TrySetCanceled(ct)))
+        {
+            await MainThread.InvokeOnMainThreadAsync(() => ps.PresentFrom(Platform.GetCurrentUIViewController()!, (res, error) => OnPaymentSheetResult(res, error, tcs))).ConfigureAwait(false);
+            return await tcs.Task.ConfigureAwait(false);
+        }
     }
 
-    private void OnPaymentSheetResult(TSPSPaymentSheetResult paymentSheetResult, TaskCompletionSource<PaymentSheetResult> tcs)
+    private void OnPaymentSheetResult(TSPSPaymentSheetResult paymentSheetResult, NSError? error, TaskCompletionSource<PaymentSheetResult> tcs)
     {
 
         switch (paymentSheetResult)
@@ -41,7 +42,7 @@ public class iOSPaymentSheet : IPaymentSheet
                 break;
 
             case TSPSPaymentSheetResult.Failed:
-                tcs.SetResult(new PaymentSheetResult.Failed(new NotImplementedException("Some internal error occured in stripe payment sheet")));
+                tcs.SetResult(new PaymentSheetResult.Failed(ToException(error)));
                 break;
 
             case TSPSPaymentSheetResult.Completed:
@@ -53,5 +54,12 @@ public class iOSPaymentSheet : IPaymentSheet
                 break;
 
         }
+    }
+
+    private static Exception ToException(NSError? error)
+    {
+        return error is null 
+            ? new ImpossiblePaymentSheetException("Internal error occured in stripe payment sheet") //should never be a case
+            : new NSErrorException(error);
     }
 }

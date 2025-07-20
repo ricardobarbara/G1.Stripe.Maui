@@ -1,6 +1,7 @@
 ﻿#if ANDROID
 using AndroidX.Activity;
 using G1.Stripe.Maui.Platforms.Android;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui.LifecycleEvents;
 #endif
 
@@ -15,6 +16,7 @@ public static class PaymentSheetDI
     public static MauiAppBuilder UseStripePaymentSheet(this MauiAppBuilder mauiAppBuilder)
     {
 #if ANDROID
+        var androidSheet = new AndroidPaymentSheet();
         mauiAppBuilder.ConfigureLifecycleEvents(builder =>
         {
             builder.AddAndroid(ab =>
@@ -23,12 +25,13 @@ public static class PaymentSheetDI
                 {
                     if (activity is MauiAppCompatActivity ma)
                     {
-                        AndroidPaymentSheet.CaptureActivity(ma);
+                        androidSheet.CaptureActivity(ma);
                     }
                 });
             });
         });
-        mauiAppBuilder.Services.AddSingleton<IPaymentSheet, AndroidPaymentSheet>();
+
+        mauiAppBuilder.Services.AddSingleton<IPaymentSheet>(androidSheet);
 #elif IOS
         mauiAppBuilder.Services.AddSingleton<IPaymentSheet, iOSPaymentSheet>();
 #endif
