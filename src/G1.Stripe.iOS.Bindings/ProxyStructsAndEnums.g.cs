@@ -1,5 +1,19 @@
 namespace Stripe
 {
+	public enum TSPSAddressCollectionMode
+	{
+		Automatic = 0,
+		Never = 1,
+		Full = 2
+	}
+
+	public enum TSPSCollectionMode
+	{
+		Automatic = 0,
+		Never = 1,
+		Always = 2
+	}
+
 	public enum TSPSCardBrand
 	{
 		Visa = 0,

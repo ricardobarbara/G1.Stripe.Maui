@@ -9,7 +9,5 @@ public partial class PaymentSheetOptions
 
     public PaymentSheetCustomerOptions? Customer { get; set; }
 
-    public GooglePayOptions? GooglePay { get; set; }
-
     public PaymentSheetBillingDetailsCollectionOptions? BillingDetails { get; set; }
 }

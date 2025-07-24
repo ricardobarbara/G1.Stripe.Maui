@@ -15,7 +15,7 @@
 		<ProjectReference Include="..\G1.Stripe.Android.Bindings\G1.Stripe.Android.Bindings.csproj" />
 	</ItemGroup>
 
-	<!--<ItemGroup Condition="$(TargetFramework.Contains('-ios')) And '$(BuildingInsideVisualStudio)' == 'true'">
+	<!--<ItemGroup Condition="$(TargetFramework.Contains('-ios'))">
 		<Reference Include="G1.Stripe.iOS.Bindings">
 			<HintPath>..\G1.Stripe.iOS.Bindings\bin\Release\net9.0-ios\G1.Stripe.iOS.Bindings.dll</HintPath>
 		</Reference>

@@ -1,0 +1,6 @@
+@G1.Stripe.Maui.Demo.Api_HostAddress = http://localhost:5075
+
+GET {{G1.Stripe.Maui.Demo.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

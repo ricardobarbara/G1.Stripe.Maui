@@ -4,6 +4,7 @@ using ObjCRuntime;
 using Stripe;
 using StripeCore;
 using UIKit;
+using PassKit;
 
 namespace Stripe
 {
@@ -238,14 +239,18 @@ namespace Stripe
 		[Export ("buttonType")]
 		PKPaymentButtonType ButtonType { get; }
 
-		// @property (readonly, nonatomic, strong) TSPSApplePayConfigurationHandlers * _Nullable customHandlers;
-		[NullAllowed, Export ("customHandlers", ArgumentSemantic.Strong)]
+        // @property (readonly, nonatomic, strong) NSArray<PKPaymentSummaryItem *> * _Nullable paymentSummaryItems;
+        [NullAllowed, Export("paymentSummaryItems", ArgumentSemantic.Copy)]
+        PKPaymentSummaryItem[] PaymentSummaryItems { get; }
+
+        // @property (readonly, nonatomic, strong) TSPSApplePayConfigurationHandlers * _Nullable customHandlers;
+        [NullAllowed, Export ("customHandlers", ArgumentSemantic.Strong)]
 		TSPSApplePayConfigurationHandlers CustomHandlers { get; }
 
 		// -(instancetype _Nonnull)initWithMerchantId:(NSString * _Nonnull)merchantId merchantCountryCode:(NSString * _Nonnull)merchantCountryCode buttonType:(id)buttonType paymentSummaryItems:(id)paymentSummaryItems customHandlers:(TSPSApplePayConfigurationHandlers * _Nullable)customHandlers __attribute__((objc_designated_initializer));
 		[Export ("initWithMerchantId:merchantCountryCode:buttonType:paymentSummaryItems:customHandlers:")]
 		[DesignatedInitializer]
-		NativeHandle Constructor (string merchantId, string merchantCountryCode, NSObject buttonType, NSObject paymentSummaryItems, [NullAllowed] TSPSApplePayConfigurationHandlers customHandlers);
+		NativeHandle Constructor (string merchantId, string merchantCountryCode, PKPaymentButtonType buttonType, [NullAllowed] PKPaymentSummaryItem[] paymentSummaryItems, [NullAllowed] TSPSApplePayConfigurationHandlers customHandlers);
 	}
 
     // @interface TSPSApplePayConfigurationHandlers
@@ -253,6 +258,36 @@ namespace Stripe
     interface TSPSApplePayConfigurationHandlers
 	{
 	}
+
+    [DisableDefaultCtor]
+    [BaseType(typeof(NSObject))]
+    interface TSPSBillingDetailsCollectionConfiguration
+    {
+        // @property (nonatomic) int attachDefaultsToPaymentMethod;
+        [Export("attachDefaultsToPaymentMethod")]
+        bool AttachDefaultsToPaymentMethod { get; set; }
+
+        // @property (nonatomic) enum TSPSAddressCollectionMode address;
+        [Export("address", ArgumentSemantic.Assign)]
+        TSPSAddressCollectionMode Address { get; set; }
+
+        // @property (nonatomic) enum TSPSCollectionMode email;
+        [Export("email", ArgumentSemantic.Assign)]
+        TSPSCollectionMode Email { get; set; }
+
+        // @property (nonatomic) enum TSPSCollectionMode name;
+        [Export("name", ArgumentSemantic.Assign)]
+        TSPSCollectionMode Name { get; set; }
+
+        // @property (nonatomic) enum TSPSCollectionMode phone;
+        [Export("phone", ArgumentSemantic.Assign)]
+        TSPSCollectionMode Phone { get; set; }
+
+        // -(instancetype _Nonnull)initWithName:(enum TSPSCollectionMode)name email:(enum TSPSCollectionMode)email phone:(enum TSPSCollectionMode)phone address:(enum TSPSAddressCollectionMode)address attachDefaultsToPaymentMethod:(id)attachDefaultsToPaymentMethod __attribute__((objc_designated_initializer));
+        [Export("initWithName:email:phone:address:attachDefaultsToPaymentMethod:")]
+        [DesignatedInitializer]
+        NativeHandle Constructor(TSPSCollectionMode name, TSPSCollectionMode email, TSPSCollectionMode phone, TSPSAddressCollectionMode address, bool attachDefaultsToPaymentMethod);
+    }
 
     // @interface TSPSConfiguration
     [BaseType(typeof(NSObject))]
@@ -266,8 +301,12 @@ namespace Stripe
 		[NullAllowed, Export ("customer", ArgumentSemantic.Strong)]
 		TSPSCustomerConfiguration Customer { get; set; }
 
-		// @property (nonatomic, strong) UIColor * _Nullable primaryButtonColor;
-		[NullAllowed, Export ("primaryButtonColor", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) TSPSApplePayConfiguration * _Nullable applePay;
+        [NullAllowed, Export("applePay", ArgumentSemantic.Strong)]
+        TSPSApplePayConfiguration ApplePay { get; set; }
+
+        // @property (nonatomic, strong) UIColor * _Nullable primaryButtonColor;
+        [NullAllowed, Export ("primaryButtonColor", ArgumentSemantic.Strong)]
 		UIColor PrimaryButtonColor { get; set; }
 
 		// @property (nonatomic, strong) TSPSAppearance * _Nonnull appearance;
@@ -278,8 +317,12 @@ namespace Stripe
 		[NullAllowed, Export ("returnURL")]
 		string ReturnURL { get; set; }
 
-		// @property (nonatomic) int allowsDelayedPaymentMethods;
-		[Export ("allowsDelayedPaymentMethods")]
+        // @property (nonatomic, strong) TSPSBillingDetailsCollectionConfiguration * _Nullable billingDetailsCollectionConfiguration;
+        [NullAllowed, Export("billingDetailsCollectionConfiguration", ArgumentSemantic.Strong)]
+        TSPSBillingDetailsCollectionConfiguration BillingDetailsCollectionConfiguration { get; set; }
+
+        // @property (nonatomic) int allowsDelayedPaymentMethods;
+        [Export ("allowsDelayedPaymentMethods")]
 		bool AllowsDelayedPaymentMethods { get; set; }
 
 		// @property (nonatomic) enum TSPSUserInterfaceStyle userInterfaceStyle;
