@@ -67,7 +67,24 @@ var options = new PaymentSheetOptions
 {
     ClientSecret = paymentIntentClientSecret,
     MerchantDisplayName = "My Store, Inc.",
-    Customer = new PaymentSheetCustomerOptions(ephemeralKey, customerId)
+
+    // Optional :
+    Customer = new PaymentSheetCustomerOptions(ephemeralKey, customerId),
+    AllowsDelayedPaymentMethods = true,
+    BillingDetails = new Options.PaymentSheetBillingDetailsCollectionOptions
+    {
+        Name = Options.BillingDetailsCollectionMode.Always,
+        Phone = Options.BillingDetailsCollectionMode.Always,
+        Email = Options.BillingDetailsCollectionMode.Always,
+        Address = Options.AddressCollectionMode.Full,
+        AttachDefaultsToPaymentMethod = false
+    },
+
+#if IOS
+                ApplePayConfiguration = new TSPSApplePayConfiguration("your.merchant.id", "us", PassKit.PKPaymentButtonType.Checkout, null, null)
+#elif ANDROID
+                GooglePay = new Com.Stripe.Android.Paymentsheet.PaymentSheet.GooglePayConfiguration(Com.Stripe.Android.Paymentsheet.PaymentSheet.GooglePayConfiguration.Environment.Test!, "us")
+#endif
 };
 
 var result = await paymentSheet.Open(options, cancellationToken);
@@ -84,7 +101,7 @@ switch (result)
     case PaymentSheetResult.Canceled:
         // User canceled the sheet
         break;
-    case PaymentSheetResult.Failed:
+    case PaymentSheetResult.Failed failure:
         // An error occurred
         break;
 }
