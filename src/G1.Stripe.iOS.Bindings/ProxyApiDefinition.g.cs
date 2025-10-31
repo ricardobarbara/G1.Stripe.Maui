@@ -100,6 +100,14 @@ interface TSPSAppearance
     // @property (readonly, nonatomic, strong) TSPSAppearanceShadow * _Nonnull shadow;
     [Export("shadow", ArgumentSemantic.Strong)]
     TSPSAppearanceShadow Shadow { get; }
+
+    // @property (nonatomic) PaymentSheetAppearanceNavigationBarStyle navigationBarStyle;
+    [Export("navigationBarStyle", ArgumentSemantic.Assign)]
+    TSPSAppearanceNavigationBarStyle NavigationBarStyle { get; set; }
+
+    // - (void)applyLiquidGlass;
+    [Export("applyLiquidGlass")]
+    void ApplyLiquidGlass();
 }
 
 // @interface TSPSAppearanceColors

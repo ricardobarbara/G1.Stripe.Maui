@@ -53,3 +53,9 @@ public enum TSPSUserInterfaceStyle
     lwaysLight = 1,
     lwaysDark = 2
 }
+
+public enum TSPSAppearanceNavigationBarStyle : long
+{
+    Default = 0,
+    Glass = 1,
+}

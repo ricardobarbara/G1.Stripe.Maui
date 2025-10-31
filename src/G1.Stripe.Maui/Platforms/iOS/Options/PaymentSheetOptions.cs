@@ -90,6 +90,8 @@ partial class PaymentSheetOptions
 
             iosAppearance.CornerRadius = cornerRadius;
 
+            iosAppearance.ApplyLiquidGlass();
+
             configuration.Appearance = iosAppearance;
         }
 
