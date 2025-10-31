@@ -1,0 +1,463 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name StripeConnect
+// swift-module-flags-ignorable:  -interface-compiler-version 6.1.2
+import AuthenticationServices
+import Foundation
+import JavaScriptCore
+import SafariServices
+@_exported import StripeConnect
+@_exported @_spi(STP) @_spi(DashboardOnly) import StripeCore
+@_spi(STP) import StripeFinancialConnections
+@_spi(STP) import StripeUICore
+import Swift
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 15, *)
+public protocol AccountOnboardingControllerDelegate : AnyObject {
+  func accountOnboardingDidExit(_ accountOnboarding: StripeConnect.AccountOnboardingController)
+  func accountOnboarding(_ accountOnboarding: StripeConnect.AccountOnboardingController, didFailLoadWithError error: any Swift.Error)
+}
+@available(iOS 15, *)
+extension StripeConnect.AccountOnboardingControllerDelegate {
+  public func accountOnboardingDidExit(_ accountOnboarding: StripeConnect.AccountOnboardingController)
+  public func accountOnboarding(_ accountOnboarding: StripeConnect.AccountOnboardingController, didFailLoadWithError error: any Swift.Error)
+}
+@_hasMissingDesignatedInitializers @available(iOS 15, *)
+final public class AccountOnboardingController {
+  weak final public var delegate: (any StripeConnect.AccountOnboardingControllerDelegate)?
+  final public var title: Swift.String? {
+    get
+    set
+  }
+  final public func present(from viewController: UIKit.UIViewController, animated: Swift.Bool = true)
+  @objc deinit
+}
+public struct AccountCollectionOptions : Swift.Equatable, Swift.Codable {
+  public enum FieldOption : Swift.String, Swift.Codable {
+    case currentlyDue
+    case eventuallyDue
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum FutureRequirementOption : Swift.String, Swift.Codable {
+    case omit
+    case include
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum RequirementsOption : Swift.Equatable, Swift.Codable {
+    case only([Swift.String])
+    case exclude([Swift.String])
+    public func encode(to encoder: any Swift.Encoder) throws
+    public static func == (a: StripeConnect.AccountCollectionOptions.RequirementsOption, b: StripeConnect.AccountCollectionOptions.RequirementsOption) -> Swift.Bool
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public var fields: StripeConnect.AccountCollectionOptions.FieldOption
+  public var futureRequirements: StripeConnect.AccountCollectionOptions.FutureRequirementOption
+  public var requirements: StripeConnect.AccountCollectionOptions.RequirementsOption?
+  public init()
+  public static func == (a: StripeConnect.AccountCollectionOptions, b: StripeConnect.AccountCollectionOptions) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_spi(PreviewConnect) @available(iOS 15, *)
+@_documentation(visibility: public) extension StripeConnect.EmbeddedComponentManager {
+  @_spi(PreviewConnect) @_documentation(visibility: public) public struct PaymentsListDefaultFiltersOptions : Swift.Equatable, Swift.Codable {
+    @_spi(PreviewConnect) @_documentation(visibility: public) public enum AmountFilter : Swift.Equatable, Swift.Codable {
+      @_spi(PreviewConnect) case equals(Swift.Double)
+      @_spi(PreviewConnect) case greaterThan(Swift.Double)
+      @_spi(PreviewConnect) case lessThan(Swift.Double)
+      @_spi(PreviewConnect) case between(lowerBound: Swift.Double, upperBound: Swift.Double)
+      @_spi(PreviewConnect) public func encode(to encoder: any Swift.Encoder) throws
+      @_spi(PreviewConnect) public static func == (a: StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.AmountFilter, b: StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.AmountFilter) -> Swift.Bool
+      @_spi(PreviewConnect) public init(from decoder: any Swift.Decoder) throws
+    }
+    @_spi(PreviewConnect) @_documentation(visibility: public) public enum DateFilter : Swift.Equatable, Swift.Codable {
+      @_spi(PreviewConnect) case before(Foundation.Date)
+      @_spi(PreviewConnect) case after(Foundation.Date)
+      @_spi(PreviewConnect) case between(start: Foundation.Date, end: Foundation.Date)
+      @_spi(PreviewConnect) public func encode(to encoder: any Swift.Encoder) throws
+      @_spi(PreviewConnect) public static func == (a: StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.DateFilter, b: StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.DateFilter) -> Swift.Bool
+      @_spi(PreviewConnect) public init(from decoder: any Swift.Decoder) throws
+    }
+    @_spi(PreviewConnect) @_documentation(visibility: public) public enum Status : Swift.Codable, Swift.CaseIterable {
+      @_spi(PreviewConnect) case blocked
+      @_spi(PreviewConnect) case canceled
+      @_spi(PreviewConnect) case disputed
+      @_spi(PreviewConnect) case earlyFraudWarning
+      @_spi(PreviewConnect) case failed
+      @_spi(PreviewConnect) case incomplete
+      @_spi(PreviewConnect) case partiallyRefunded
+      @_spi(PreviewConnect) case pending
+      @_spi(PreviewConnect) case refundPending
+      @_spi(PreviewConnect) case refunded
+      @_spi(PreviewConnect) case successful
+      @_spi(PreviewConnect) case uncaptured
+      @_spi(PreviewConnect) public func encode(to encoder: any Swift.Encoder) throws
+      @_spi(PreviewConnect) public static func == (a: StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.Status, b: StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.Status) -> Swift.Bool
+      @_spi(PreviewConnect) @available(iOS 15, *)
+      public typealias AllCases = [StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.Status]
+      @_spi(PreviewConnect) nonisolated public static var allCases: [StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.Status] {
+        @_spi(PreviewConnect) get
+      }
+      @_spi(PreviewConnect) public func hash(into hasher: inout Swift.Hasher)
+      @_spi(PreviewConnect) public var hashValue: Swift.Int {
+        @_spi(PreviewConnect) get
+      }
+      @_spi(PreviewConnect) public init(from decoder: any Swift.Decoder) throws
+    }
+    @_spi(PreviewConnect) @_documentation(visibility: public) public enum PaymentMethod : Swift.Codable, Swift.CaseIterable {
+      @_spi(PreviewConnect) case achCreditTransfer
+      @_spi(PreviewConnect) case achDebit
+      @_spi(PreviewConnect) case acssDebit
+      @_spi(PreviewConnect) case affirm
+      @_spi(PreviewConnect) case afterpayClearpay
+      @_spi(PreviewConnect) case alipay
+      @_spi(PreviewConnect) case alma
+      @_spi(PreviewConnect) case amazonPay
+      @_spi(PreviewConnect) case amexExpressCheckout
+      @_spi(PreviewConnect) case androidPay
+      @_spi(PreviewConnect) case applePay
+      @_spi(PreviewConnect) case auBecsDebit
+      @_spi(PreviewConnect) case nzBankAccount
+      @_spi(PreviewConnect) case bancontact
+      @_spi(PreviewConnect) case bacsDebit
+      @_spi(PreviewConnect) case bitcoinSource
+      @_spi(PreviewConnect) case bitcoin
+      @_spi(PreviewConnect) case blik
+      @_spi(PreviewConnect) case boleto
+      @_spi(PreviewConnect) case boletoPilot
+      @_spi(PreviewConnect) case cardPresent
+      @_spi(PreviewConnect) case card
+      @_spi(PreviewConnect) case cashapp
+      @_spi(PreviewConnect) case crypto
+      @_spi(PreviewConnect) case customerBalance
+      @_spi(PreviewConnect) case demoPay
+      @_spi(PreviewConnect) case dummyPassthroughCard
+      @_spi(PreviewConnect) case gbpCreditTransfer
+      @_spi(PreviewConnect) case googlePay
+      @_spi(PreviewConnect) case eps
+      @_spi(PreviewConnect) case fpx
+      @_spi(PreviewConnect) case giropay
+      @_spi(PreviewConnect) case grabpay
+      @_spi(PreviewConnect) case ideal
+      @_spi(PreviewConnect) case idBankTransfer
+      @_spi(PreviewConnect) case idCreditTransfer
+      @_spi(PreviewConnect) case jpCreditTransfer
+      @_spi(PreviewConnect) case interacPresent
+      @_spi(PreviewConnect) case kakaoPay
+      @_spi(PreviewConnect) case klarna
+      @_spi(PreviewConnect) case konbini
+      @_spi(PreviewConnect) case krCard
+      @_spi(PreviewConnect) case krMarket
+      @_spi(PreviewConnect) case link
+      @_spi(PreviewConnect) case masterpass
+      @_spi(PreviewConnect) case mbWay
+      @_spi(PreviewConnect) case metaPay
+      @_spi(PreviewConnect) case multibanco
+      @_spi(PreviewConnect) case mobilepay
+      @_spi(PreviewConnect) case naverPay
+      @_spi(PreviewConnect) case netbanking
+      @_spi(PreviewConnect) case ngBank
+      @_spi(PreviewConnect) case ngBankTransfer
+      @_spi(PreviewConnect) case ngCard
+      @_spi(PreviewConnect) case ngMarket
+      @_spi(PreviewConnect) case ngUssd
+      @_spi(PreviewConnect) case vipps
+      @_spi(PreviewConnect) case oxxo
+      @_spi(PreviewConnect) case p24
+      @_spi(PreviewConnect) case payto
+      @_spi(PreviewConnect) case payByBank
+      @_spi(PreviewConnect) case paperCheck
+      @_spi(PreviewConnect) case payco
+      @_spi(PreviewConnect) case paynow
+      @_spi(PreviewConnect) case paypal
+      @_spi(PreviewConnect) case pix
+      @_spi(PreviewConnect) case promptpay
+      @_spi(PreviewConnect) case revolutPay
+      @_spi(PreviewConnect) case samsungPay
+      @_spi(PreviewConnect) case sepaCreditTransfer
+      @_spi(PreviewConnect) case sepaDebit
+      @_spi(PreviewConnect) case sofort
+      @_spi(PreviewConnect) case southKoreaMarket
+      @_spi(PreviewConnect) case swish
+      @_spi(PreviewConnect) case threeDSecure
+      @_spi(PreviewConnect) case threeDSecure2
+      @_spi(PreviewConnect) case threeDSecure2Eap
+      @_spi(PreviewConnect) case twint
+      @_spi(PreviewConnect) case upi
+      @_spi(PreviewConnect) case usBankAccount
+      @_spi(PreviewConnect) case visaCheckout
+      @_spi(PreviewConnect) case wechat
+      @_spi(PreviewConnect) case wechatPay
+      @_spi(PreviewConnect) case zip
+      @_spi(PreviewConnect) public func encode(to encoder: any Swift.Encoder) throws
+      @_spi(PreviewConnect) public static func == (a: StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.PaymentMethod, b: StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.PaymentMethod) -> Swift.Bool
+      @_spi(PreviewConnect) @available(iOS 15, *)
+      public typealias AllCases = [StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.PaymentMethod]
+      @_spi(PreviewConnect) nonisolated public static var allCases: [StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.PaymentMethod] {
+        @_spi(PreviewConnect) get
+      }
+      @_spi(PreviewConnect) public func hash(into hasher: inout Swift.Hasher)
+      @_spi(PreviewConnect) public var hashValue: Swift.Int {
+        @_spi(PreviewConnect) get
+      }
+      @_spi(PreviewConnect) public init(from decoder: any Swift.Decoder) throws
+    }
+    @_spi(PreviewConnect) @_documentation(visibility: public) public var amount: StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.AmountFilter?
+    @_spi(PreviewConnect) @_documentation(visibility: public) public var date: StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.DateFilter?
+    @_spi(PreviewConnect) @_documentation(visibility: public) public var status: [StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.Status]?
+    @_spi(PreviewConnect) @_documentation(visibility: public) public var paymentMethod: StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.PaymentMethod?
+    @_spi(PreviewConnect) @_documentation(visibility: public) public init()
+    @_spi(PreviewConnect) public static func == (a: StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions, b: StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions) -> Swift.Bool
+    @_spi(PreviewConnect) public func encode(to encoder: any Swift.Encoder) throws
+    @_spi(PreviewConnect) public init(from decoder: any Swift.Decoder) throws
+  }
+}
+@_spi(DashboardOnly) @objc @_hasMissingDesignatedInitializers @available(iOS 15, *)
+@_Concurrency.MainActor @preconcurrency public class NotificationBannerViewController : UIKit.UIViewController {
+  @_spi(DashboardOnly) @_Concurrency.MainActor @preconcurrency weak public var delegate: (any StripeConnect.NotificationBannerViewControllerDelegate)?
+  @_spi(DashboardOnly) @objc deinit
+}
+@_spi(DashboardOnly) @available(iOS 15, *)
+public protocol NotificationBannerViewControllerDelegate : AnyObject {
+  @_spi(DashboardOnly) func notificationBanner(_ notificationBanner: StripeConnect.NotificationBannerViewController, didFailLoadWithError error: any Swift.Error)
+  @_spi(DashboardOnly) func notificationBanner(_ notificationBanner: StripeConnect.NotificationBannerViewController, didChangeWithTotal total: Swift.Int, andActionRequired actionRequired: Swift.Int)
+}
+@_spi(DashboardOnly) @available(iOS 15, *)
+extension StripeConnect.NotificationBannerViewControllerDelegate {
+  @_spi(DashboardOnly) public func notificationBanner(_ notificationBanner: StripeConnect.NotificationBannerViewController, didFailLoadWithError error: any Swift.Error)
+  @_spi(DashboardOnly) public func notificationBanner(_ notificationBanner: StripeConnect.NotificationBannerViewController, didChangeWithTotal total: Swift.Int, andActionRequired actionRequired: Swift.Int)
+}
+@available(iOS 15, *)
+extension StripeConnect.EmbeddedComponentManager {
+  public struct Appearance {
+    public enum TextTransform {
+      case none
+      case uppercase
+      case lowercase
+      case capitalize
+      public static func == (a: StripeConnect.EmbeddedComponentManager.Appearance.TextTransform, b: StripeConnect.EmbeddedComponentManager.Appearance.TextTransform) -> Swift.Bool
+      public func hash(into hasher: inout Swift.Hasher)
+      public var hashValue: Swift.Int {
+        get
+      }
+    }
+    public struct Typography {
+      public struct Style {
+        public var fontSize: CoreFoundation.CGFloat?
+        public var weight: UIKit.UIFont.Weight?
+        public var textTransform: StripeConnect.EmbeddedComponentManager.Appearance.TextTransform?
+        public init()
+      }
+      public var font: UIKit.UIFont?
+      public var fontSizeBase: CoreFoundation.CGFloat?
+      public var bodyMd: StripeConnect.EmbeddedComponentManager.Appearance.Typography.Style
+      public var bodySm: StripeConnect.EmbeddedComponentManager.Appearance.Typography.Style
+      public var headingXl: StripeConnect.EmbeddedComponentManager.Appearance.Typography.Style
+      public var headingLg: StripeConnect.EmbeddedComponentManager.Appearance.Typography.Style
+      public var headingMd: StripeConnect.EmbeddedComponentManager.Appearance.Typography.Style
+      public var headingSm: StripeConnect.EmbeddedComponentManager.Appearance.Typography.Style
+      public var headingXs: StripeConnect.EmbeddedComponentManager.Appearance.Typography.Style
+      public var labelMd: StripeConnect.EmbeddedComponentManager.Appearance.Typography.Style
+      public var labelSm: StripeConnect.EmbeddedComponentManager.Appearance.Typography.Style
+      public init()
+    }
+    public struct Colors {
+      public var primary: UIKit.UIColor?
+      public var text: UIKit.UIColor?
+      public var danger: UIKit.UIColor?
+      public var background: UIKit.UIColor?
+      public var secondaryText: UIKit.UIColor?
+      public var border: UIKit.UIColor?
+      public var actionPrimaryText: UIKit.UIColor?
+      public var actionSecondaryText: UIKit.UIColor?
+      public var offsetBackground: UIKit.UIColor?
+      public var formBackground: UIKit.UIColor?
+      public var formHighlightBorder: UIKit.UIColor?
+      public var formAccent: UIKit.UIColor?
+      public init()
+    }
+    public struct Button {
+      public var colorBackground: UIKit.UIColor?
+      public var colorBorder: UIKit.UIColor?
+      public var colorText: UIKit.UIColor?
+      public init()
+    }
+    public struct Badge {
+      public var colorBackground: UIKit.UIColor?
+      public var colorBorder: UIKit.UIColor?
+      public var colorText: UIKit.UIColor?
+      public init()
+    }
+    public struct CornerRadius {
+      public var base: CoreFoundation.CGFloat?
+      public var form: CoreFoundation.CGFloat?
+      public var button: CoreFoundation.CGFloat?
+      public var badge: CoreFoundation.CGFloat?
+      public var overlay: CoreFoundation.CGFloat?
+      public init()
+    }
+    public static let `default`: StripeConnect.EmbeddedComponentManager.Appearance
+    public var typography: StripeConnect.EmbeddedComponentManager.Appearance.Typography
+    public var colors: StripeConnect.EmbeddedComponentManager.Appearance.Colors
+    public var spacingUnit: CoreFoundation.CGFloat?
+    public var buttonPrimary: StripeConnect.EmbeddedComponentManager.Appearance.Button
+    public var buttonSecondary: StripeConnect.EmbeddedComponentManager.Appearance.Button
+    public var badgeNeutral: StripeConnect.EmbeddedComponentManager.Appearance.Badge
+    public var badgeSuccess: StripeConnect.EmbeddedComponentManager.Appearance.Badge
+    public var badgeWarning: StripeConnect.EmbeddedComponentManager.Appearance.Badge
+    public var badgeDanger: StripeConnect.EmbeddedComponentManager.Appearance.Badge
+    public var cornerRadius: StripeConnect.EmbeddedComponentManager.Appearance.CornerRadius
+    public init()
+  }
+}
+@available(iOS 15, *)
+extension StripeConnect.EmbeddedComponentManager {
+  public struct CustomFontSource {
+    public init(font: UIKit.UIFont, fileUrl: Foundation.URL) throws
+  }
+}
+@_spi(PreviewConnect) @objc @_hasMissingDesignatedInitializers @available(iOS 15, *)
+@_Concurrency.MainActor @preconcurrency public class PayoutsViewController : UIKit.UIViewController {
+  @_spi(PreviewConnect) @_Concurrency.MainActor @preconcurrency weak public var delegate: (any StripeConnect.PayoutsViewControllerDelegate)?
+  @_spi(PreviewConnect) @objc deinit
+}
+@_spi(PreviewConnect) @available(iOS 15, *)
+public protocol PayoutsViewControllerDelegate : AnyObject {
+  @_spi(PreviewConnect) func payouts(_ payouts: StripeConnect.PayoutsViewController, didFailLoadWithError error: any Swift.Error)
+}
+@_spi(PreviewConnect) @available(iOS 15, *)
+extension StripeConnect.PayoutsViewControllerDelegate {
+  @_spi(PreviewConnect) public func payouts(_ payouts: StripeConnect.PayoutsViewController, didFailLoadWithError error: any Swift.Error)
+}
+@_spi(PreviewConnect) @objc @_hasMissingDesignatedInitializers @available(iOS 15, *)
+@_Concurrency.MainActor @preconcurrency public class PaymentsViewController : UIKit.UIViewController {
+  @_spi(PreviewConnect) @_Concurrency.MainActor @preconcurrency weak public var delegate: (any StripeConnect.PaymentsViewControllerDelegate)?
+  @_spi(PreviewConnect) @objc deinit
+}
+@_spi(PreviewConnect) @available(iOS 15, *)
+public protocol PaymentsViewControllerDelegate : AnyObject {
+  @_spi(PreviewConnect) func payments(_ payments: StripeConnect.PaymentsViewController, didFailLoadWithError error: any Swift.Error)
+}
+@_spi(PreviewConnect) @available(iOS 15, *)
+extension StripeConnect.PaymentsViewControllerDelegate {
+  @_spi(PreviewConnect) public func payments(_ payments: StripeConnect.PaymentsViewController, didFailLoadWithError error: any Swift.Error)
+}
+@_spi(DashboardOnly) @objc @_hasMissingDesignatedInitializers @available(iOS 15, *)
+@_Concurrency.MainActor @preconcurrency public class AccountManagementViewController : UIKit.UIViewController {
+  @_spi(DashboardOnly) @_Concurrency.MainActor @preconcurrency weak public var delegate: (any StripeConnect.AccountManagementViewControllerDelegate)?
+  @_spi(DashboardOnly) @objc deinit
+}
+@_spi(DashboardOnly) @available(iOS 15, *)
+public protocol AccountManagementViewControllerDelegate : AnyObject {
+  @_spi(DashboardOnly) func accountManagement(_ accountManagement: StripeConnect.AccountManagementViewController, didFailLoadWithError error: any Swift.Error)
+}
+@_spi(DashboardOnly) @available(iOS 15, *)
+extension StripeConnect.AccountManagementViewControllerDelegate {
+  @_spi(DashboardOnly) public func accountManagement(_ accountManagement: StripeConnect.AccountManagementViewController, didFailLoadWithError error: any Swift.Error)
+}
+@_spi(DashboardOnly) @objc @_hasMissingDesignatedInitializers @available(iOS 15, *)
+@_Concurrency.MainActor @preconcurrency public class PaymentDetailsViewController : UIKit.UIViewController {
+  @_spi(DashboardOnly) @_Concurrency.MainActor @preconcurrency weak public var delegate: (any StripeConnect.PaymentDetailsViewControllerDelegate)?
+  @_spi(DashboardOnly) @_Concurrency.MainActor @preconcurrency public func setPayment(id: Swift.String)
+  @_spi(DashboardOnly) @objc deinit
+}
+@_spi(DashboardOnly) @available(iOS 15, *)
+public protocol PaymentDetailsViewControllerDelegate : AnyObject {
+  @_spi(DashboardOnly) func paymentDetails(_ paymentDetails: StripeConnect.PaymentDetailsViewController, didFailLoadWithError error: any Swift.Error)
+}
+@_spi(DashboardOnly) @available(iOS 15, *)
+extension StripeConnect.PaymentDetailsViewControllerDelegate {
+  @_spi(DashboardOnly) public func paymentDetails(_ paymentDetails: StripeConnect.PaymentDetailsViewController, didFailLoadWithError error: any Swift.Error)
+}
+@_spi(STP) @objc(STP_Internal_ConnectActivityIndicator) @_Concurrency.MainActor @preconcurrency final public class ConnectActivityIndicator : UIKit.UIView {
+  @_spi(STP) @_Concurrency.MainActor @preconcurrency final public var hidesWhenStopped: Swift.Bool {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor @preconcurrency final public var color: UIKit.UIColor {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor @preconcurrency final public var isAnimating: Swift.Bool {
+    get
+  }
+  @_spi(STP) @_Concurrency.MainActor @preconcurrency @objc override final public var intrinsicContentSize: CoreFoundation.CGSize {
+    @_spi(STP) @objc get
+  }
+  @_spi(STP) @_Concurrency.MainActor @preconcurrency @objc dynamic public init()
+  @_spi(STP) @objc deinit
+  @_spi(STP) @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_spi(STP) @_Concurrency.MainActor @preconcurrency @objc override final public func tintColorDidChange()
+  @_spi(STP) @_Concurrency.MainActor @preconcurrency @objc override final public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_spi(STP) @_Concurrency.MainActor @preconcurrency @objc override final public func layoutSubviews()
+  @_spi(STP) @_Concurrency.MainActor @preconcurrency @objc override final public func willMove(toWindow newWindow: UIKit.UIWindow?)
+}
+@_spi(STP) extension StripeConnect.ConnectActivityIndicator {
+  @_spi(STP) @_Concurrency.MainActor @preconcurrency final public func startAnimating()
+  @_spi(STP) @_Concurrency.MainActor @preconcurrency final public func stopAnimating()
+}
+@available(iOS 15, *)
+final public class EmbeddedComponentManager {
+  @_spi(DashboardOnly) convenience public init(apiClient: StripeCore.STPAPIClient = STPAPIClient.shared, appearance: StripeConnect.EmbeddedComponentManager.Appearance = .default, publicKeyOverride: Swift.String, baseURLOverride: Foundation.URL? = nil, fonts: [StripeConnect.EmbeddedComponentManager.CustomFontSource] = [])
+  public init(apiClient: StripeCore.STPAPIClient = STPAPIClient.shared, appearance: StripeConnect.EmbeddedComponentManager.Appearance = .default, fonts: [StripeConnect.EmbeddedComponentManager.CustomFontSource] = [], fetchClientSecret: @escaping () async -> Swift.String?)
+  final public func update(appearance: StripeConnect.EmbeddedComponentManager.Appearance)
+  final public func createAccountOnboardingController(fullTermsOfServiceUrl: Foundation.URL? = nil, recipientTermsOfServiceUrl: Foundation.URL? = nil, privacyPolicyUrl: Foundation.URL? = nil, skipTermsOfServiceCollection: Swift.Bool? = nil, collectionOptions: StripeConnect.AccountCollectionOptions = .init()) -> StripeConnect.AccountOnboardingController
+  @_spi(DashboardOnly) final public func createPaymentDetailsViewController() -> StripeConnect.PaymentDetailsViewController
+  @_spi(DashboardOnly) final public func createAccountManagementViewController(collectionOptions: StripeConnect.AccountCollectionOptions = .init()) -> StripeConnect.AccountManagementViewController
+  @_spi(DashboardOnly) final public func createNotificationBannerViewController(collectionOptions: StripeConnect.AccountCollectionOptions = .init()) -> StripeConnect.NotificationBannerViewController
+  @_spi(PreviewConnect) @_documentation(visibility: public) final public func createPayoutsViewController() -> StripeConnect.PayoutsViewController
+  @_spi(PreviewConnect) @_documentation(visibility: public) final public func createPaymentsViewController(defaultFilters: StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions = .init()) -> StripeConnect.PaymentsViewController
+  @objc deinit
+}
+public struct EmbeddedComponentError : Swift.Error, Swift.CustomDebugStringConvertible {
+  public enum ErrorType : Swift.String {
+    case apiConnectionError
+    case authenticationError
+    case accountSessionCreateError
+    case invalidRequestError
+    case rateLimitError
+    case apiError
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public let type: StripeConnect.EmbeddedComponentError.ErrorType
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+extension StripeConnect.AccountCollectionOptions.FieldOption : Swift.Equatable {}
+extension StripeConnect.AccountCollectionOptions.FieldOption : Swift.Hashable {}
+extension StripeConnect.AccountCollectionOptions.FieldOption : Swift.RawRepresentable {}
+extension StripeConnect.AccountCollectionOptions.FutureRequirementOption : Swift.Equatable {}
+extension StripeConnect.AccountCollectionOptions.FutureRequirementOption : Swift.Hashable {}
+extension StripeConnect.AccountCollectionOptions.FutureRequirementOption : Swift.RawRepresentable {}
+@_spi(PreviewConnect) @available(iOS 15, *)
+extension StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.Status : Swift.Equatable {}
+@_spi(PreviewConnect) @available(iOS 15, *)
+extension StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.Status : Swift.Hashable {}
+@_spi(PreviewConnect) @available(iOS 15, *)
+extension StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.PaymentMethod : Swift.Equatable {}
+@_spi(PreviewConnect) @available(iOS 15, *)
+extension StripeConnect.EmbeddedComponentManager.PaymentsListDefaultFiltersOptions.PaymentMethod : Swift.Hashable {}
+@available(iOS 15, *)
+extension StripeConnect.EmbeddedComponentManager.Appearance.TextTransform : Swift.Equatable {}
+@available(iOS 15, *)
+extension StripeConnect.EmbeddedComponentManager.Appearance.TextTransform : Swift.Hashable {}
+extension StripeConnect.EmbeddedComponentError.ErrorType : Swift.Equatable {}
+extension StripeConnect.EmbeddedComponentError.ErrorType : Swift.Hashable {}
+extension StripeConnect.EmbeddedComponentError.ErrorType : Swift.RawRepresentable {}

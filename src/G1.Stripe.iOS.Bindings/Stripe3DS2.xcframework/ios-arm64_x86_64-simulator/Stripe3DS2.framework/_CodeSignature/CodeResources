@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		2ASA9cfaye7HJPYYIr/mX6+o07A=
+		qyepT3i2PdTm1GQAVwqZbbEzu8Q=
 		</data>
 		<key>Headers/STDSAlreadyInitializedException.h</key>
 		<data>
@@ -142,7 +142,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		2LqP58Zh/KZf1HovLflg1WorwUU=
+		bEM6QRwyXRibaIcLA0bPOVv1QUU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -415,15 +415,6 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>nn-NO.lproj/Localizable.strings</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			BqBeLtV8ATgKQgQlXTklrXh9dVg=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
 		<key>pl-PL.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
@@ -556,7 +547,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ehs9+H5pXsFqwTSz9+pr0gd52eGf0yIjFvo1HyOLOVQ=
+			DyHwOxb8s9JZ+tMC0VIEI55WClyiGtMNWjjSxSnPJUg=
 			</data>
 		</dict>
 		<key>Headers/STDSAlreadyInitializedException.h</key>
@@ -1078,15 +1069,6 @@
 			<key>hash2</key>
 			<data>
 			8wkpd0kH47bErz5dyIwRvAky+vRzr84r37x4x1lVL4s=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>nn-NO.lproj/Localizable.strings</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			TVX4uGpa/Yu0CrLChqf1F9iwWg/GedWrXOMApo/pAtE=
 			</data>
 			<key>optional</key>
 			<true/>

@@ -1,6 +1,6 @@
 ﻿<metadata>
 
-	<remove-node path="/api/package[@name='com.stripe.stripeterminal.dagger']"/>
+	<remove-node path="/api/package[@name='com.stripe.stripeterminal.dagger']" />
 
 	<remove-node path="/api/package[starts-with(@name, 'com.google')]" />
 	<remove-node path="/api/package[starts-with(@name, 'kotlin')]" />
@@ -32,9 +32,15 @@
 	<remove-node path="/api/package[@name='com.stripe.android']/class[@name='SetupIntentResult']" />
 	<remove-node path="/api/package[@name='com.stripe.android']/class[@name='PaymentIntentResult']" />
 
-
 	<remove-node path="/api/package[@name='com.stripe.android.model']/class[@name='ConfirmSetupIntentParams']" />
 	<remove-node path="/api/package[@name='com.stripe.android']/interface[@name='StripeIntentResult.Outcome']" />
+
+	<remove-node path="/api/package[@name='com.stripe.android.challenge']/class[@name='PassiveChallengeActivityContract']" />
+	<remove-node path="/api/package[@name='com.stripe.android.challenge.warmer.activity']/class[@name='PassiveChallengeWarmerContract']" />
+
+	<remove-node path="/api/package[@name='com.stripe.android.model']/class[@name='ClientAttributionMetadata']" />
+
+	<remove-node path="/api/package[@name='com.stripe.android.model']/interface[@name='ElementsSessionParams']" />
 
 	<attr path="/api/package[@name='com.stripe.android.paymentsheet.databinding']/class[@name='StripeFragmentPrimaryButtonContainerBinding']/method[@name='getRoot' and count(parameter)=0]" name="managedReturn">Android.Views.View</attr>
 	<attr path="/api/package[@name='com.stripe.android.model']/class[@name='ConfirmPaymentIntentParams']/method[@name='withShouldUseStripeSdk' and count(parameter)=1 and parameter[1][@type='boolean']]" name="managedReturn">Com.Stripe.Android.Model.IConfirmStripeIntentParams</attr>

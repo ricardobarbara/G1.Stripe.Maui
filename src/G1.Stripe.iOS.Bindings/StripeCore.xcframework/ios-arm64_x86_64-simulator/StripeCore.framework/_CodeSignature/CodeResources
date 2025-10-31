@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/StripeCore-Swift.h</key>
 		<data>
-		7+IabThdN1hiBeKsYobOkuC16GI=
+		ze3OIjpJZNLsMqahkDRf50AeCSY=
 		</data>
 		<key>Headers/StripeCore.h</key>
 		<data>
@@ -14,47 +14,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		kofZfzUoc5VgICL7QDJ3ReFvcIM=
+		dST18KT8cy0uUPH3ILXfbk8C4Ig=
 		</data>
 		<key>Modules/StripeCore.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		c/YlSJst0yB7tpqOGwkQHExqi50=
+		GUD4Du0JZpRoXFT20y5Hng/SF44=
 		</data>
 		<key>Modules/StripeCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		Dm4g1p2HYBL8DNDOoy66fS5vVZs=
+		qeQIPJWtIme/Ep0JV0KVcrvGVVY=
 		</data>
 		<key>Modules/StripeCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		dbI6PXXXcETa2nAuBL/wUZnUcNg=
+		ZmQG01u0qY7vGNz4gC8bDWpg84M=
 		</data>
 		<key>Modules/StripeCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		MtI6KgFdAmigdYyW4qL5Nxx3zhQ=
+		ErLlX4n7LRqFLR8fX84HzgKxnLA=
 		</data>
 		<key>Modules/StripeCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		QvGReL+zNxUTx00vFNsG7ZdvtY0=
+		/Llq/CvWP4WZG7KrxOFqqlnPVS4=
 		</data>
 		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		c/YlSJst0yB7tpqOGwkQHExqi50=
+		GUD4Du0JZpRoXFT20y5Hng/SF44=
 		</data>
 		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		HAFa/A+NDRAfA074uOf1gx+ftng=
+		9HoHpgSd6r2klTLa5QQrZhFqRj4=
 		</data>
 		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		0+cNoqfe/ty3IwtHwejsy1E7oZY=
+		xYjCr5ufx64CA2rQMOfbzK35oy4=
 		</data>
 		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		fwP+1y/EFxSkiYQPpDGB3oGMOVs=
+		Heqh9BqEvSlssnmr/fotRucZpxo=
 		</data>
 		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		NQYOL4ZlaRh1TYeI3LSN5ssCI/4=
+		hi6yn2xykMK8wTn6FiNVw1qPRPc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -284,7 +284,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8aHxPjNaz/saUiBZ85Ji9E+TdR0=
+			fwaSvYinDwjxO1RwJ7kA2EIi8Xw=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -303,15 +303,6 @@
 			<key>hash</key>
 			<data>
 			doe3BWzGm/VoKp4yo0+oIxqpiTI=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>nn-NO.lproj/Localizable.strings</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ALtuQTzNUAxaC4qt9xzYK3s6sNA=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -347,7 +338,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xmLDftCUfWTBGeuTx7z5ePB86wE=
+			6aH6GkCEt6QPOlby1PTR6WibFxM=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -449,7 +440,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Zh7uXhCtXewf1Gvd0+XaePERA1VmfjcZXy8BGeRIg4Y=
+			HXrQbPM3chUYXAeJH9YvkH8mOh9BA5bFC2Qxv157zok=
 			</data>
 		</dict>
 		<key>Headers/StripeCore.h</key>
@@ -463,70 +454,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VJGm+J3zXBK34IYIJiF+oAMODaa8zeBzOQueluUe870=
+			mEIPD8FZMmDblg4kj/u+50Dl4ncWoaAn5RzkH9nhZso=
 			</data>
 		</dict>
 		<key>Modules/StripeCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pKDHID5se9uIrEid1Jp8s1ai/XD67GOZ6t7YKIECAHA=
+			Ncsf1I0X0w65GIyeBQas3mgHc1lEMkm2iAHj+r7Dits=
 			</data>
 		</dict>
 		<key>Modules/StripeCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SnKZWBFgwX94c6YE4S44BsYdUxVnXaYvAPTlFFifurc=
+			PvJHmVX4OPftaexbqwjGl9qac+k+7NhkRnOMwqceqZA=
 			</data>
 		</dict>
 		<key>Modules/StripeCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Qn+I8IZyCaHCICf37zdpqM0zzgxVQSMECmNHJ4Gkch0=
+			lhoqt9bmZqoIva8fc1fqoTRIS5MmPYEvF5tdL4wBKDE=
 			</data>
 		</dict>
 		<key>Modules/StripeCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qbQuqvZsFxMjfAeLzj3+bbF3sFYWzlz0WlluHeUbf7c=
+			fAdiHCEbD24K8OF4nns82Rq8nCw83hOuzsjrgRkMdqA=
 			</data>
 		</dict>
 		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VJGm+J3zXBK34IYIJiF+oAMODaa8zeBzOQueluUe870=
+			mEIPD8FZMmDblg4kj/u+50Dl4ncWoaAn5RzkH9nhZso=
 			</data>
 		</dict>
 		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1SESBT2h9oufrgRwzN77n/ZJGQdYcPVWLhiRQPtSOe4=
+			x2/3ZhGkNq+3LR7IBnIAqhwTDP+yal6hsCeetxiBM20=
 			</data>
 		</dict>
 		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5rCEPvyloErnWiB8KxgjcqPdL+jwIqf8h9S2c7g5nvQ=
+			STAxoUboRKbIkNtYJemIxBkSZ+1VhfpKz3oeL5iwnUQ=
 			</data>
 		</dict>
 		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OoSHLfh7JgWzpo3k3PKpCUTXl8SvnhFe02YEkZ0EpPw=
+			BW4sIxsgkZeKt6xW6AhRct34iYeV6bXo0+5EcTGfb1s=
 			</data>
 		</dict>
 		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lLHagKRJpB2pSw+h1lfBYX1TIg9YN2xCKwjr0SkxEEE=
+			NbsBPzEtzDh6sZB8bBysuOeIZyQFYXTZViV17hgszkU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -763,7 +754,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UZSKVbpyvYiJ93GREHfNSvquF9LEsSUzyz1LS5EGWhc=
+			cfIzFxULJ2fg7gG0+XBRtj6JAD/sDQ4GelUNP/5pveQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -782,15 +773,6 @@
 			<key>hash2</key>
 			<data>
 			9Ih+m+LTMBdxCjf+YjqlDUOX4KgBIhXJIcU4oMVxr6c=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>nn-NO.lproj/Localizable.strings</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Vo3GpuF5kFBrauxGa9nKlQhStCBl5rV0DkDEN80RXHs=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -826,7 +808,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5QkqHpO3bSGhQFxeW+2C7ACT8FuixXSPveQ8NF5+IB4=
+			bodLNT77at+KdBjoON56j9l/vnJObaMlXtBPZTcSXZ0=
 			</data>
 			<key>optional</key>
 			<true/>

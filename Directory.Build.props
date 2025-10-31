@@ -3,29 +3,28 @@
 		<LangVersion>preview</LangVersion>
 		<EnablePreviewFeatures>true</EnablePreviewFeatures>
 		<Nullable>enable</Nullable>
-    <ImplicitUsings>true</ImplicitUsings>
+		<ImplicitUsings>true</ImplicitUsings>
 		<WarningLevel>3</WarningLevel>
 		<DefaultLanguage>en-us</DefaultLanguage>
-		
-		<_IosSdkVersion>24.16.1</_IosSdkVersion>
-		<_AndroidSdkVersion>21.18.0</_AndroidSdkVersion>
-		
-</PropertyGroup>
-    <PropertyGroup Label="Macros">
-        <PropertySheetPath>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))</PropertySheetPath>
-    </PropertyGroup>
-    
-    <ItemGroup>
-        <None Include="$(PropertySheetPath)LICENSE" Pack="true" PackagePath="" />
-        <None Include="$(PropertySheetPath)assets\icon.png" Pack="true" PackagePath="" />
-    </ItemGroup>
-    
-    <PropertyGroup>
-        <IsPackable>true</IsPackable>
-        <Authors>Generation One Team</Authors>
-        <PackageIcon>icon.png</PackageIcon>
-        <Copyright>Generation One</Copyright>
-        <PackageLicenseFile>LICENSE</PackageLicenseFile>
-			  <PackageProjectUrl>https://github.com/Generation-One/G1.Stripe.Maui</PackageProjectUrl>
-    </PropertyGroup>
+
+		<_IosSdkVersion>24.25.0</_IosSdkVersion>
+		<_AndroidSdkVersion>21.29.1</_AndroidSdkVersion>
+	</PropertyGroup>
+	<PropertyGroup Label="Macros">
+		<PropertySheetPath>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))</PropertySheetPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="$(PropertySheetPath)LICENSE" Pack="true" PackagePath="" />
+		<None Include="$(PropertySheetPath)assets\icon.png" Pack="true" PackagePath="" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<IsPackable>true</IsPackable>
+		<Authors>Generation One Team</Authors>
+		<PackageIcon>icon.png</PackageIcon>
+		<Copyright>Generation One</Copyright>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageProjectUrl>https://github.com/Generation-One/G1.Stripe.Maui</PackageProjectUrl>
+	</PropertyGroup>
 </Project>
