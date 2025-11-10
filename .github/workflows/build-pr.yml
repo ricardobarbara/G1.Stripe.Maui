@@ -2,9 +2,7 @@ name: Build Packages
 
 on:
   pull_request:
-    branches:
-      - master
-      - develop
+    branches: [ master, develop ]
   workflow_dispatch:
     inputs:
       pr_number:
@@ -21,21 +19,7 @@ jobs:
       pull-requests: read
 
     steps:
-      - name: Checkout PR or branch
-        id: checkout
-        uses: actions/checkout@v4
-        if: ${{ github.event_name != 'workflow_dispatch' }}
-        # Normal behavior: for pull_request or main branch runs
-
-      - name: Checkout external PR (manual trigger)
-        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.pr_number != '' }}
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ fromJson(steps.pr.outputs.data).head.repo.full_name }}
-          ref: ${{ fromJson(steps.pr.outputs.data).head.ref }}
-          fetch-depth: 0
-
-      - name: Get PR info
+      - name: Get PR info (manual trigger)
         if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.pr_number != '' }}
         id: pr
         uses: octokit/request-action@v2.x
@@ -43,6 +27,27 @@ jobs:
           route: GET /repos/${{ github.repository }}/pulls/${{ github.event.inputs.pr_number }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Checkout external PR (manual trigger)
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.pr_number != '' }}
+        uses: actions/checkout@v4
+        with:
+          token: secrets.GITHUB_TOKEN
+          repository: ${{ fromJson(steps.pr.outputs.data).head.repo.full_name }}
+          ref: ${{ fromJson(steps.pr.outputs.data).head.ref }}
+          fetch-depth: 0
+
+      - name: Checkout current repo (manual trigger without PR)
+        if: ${{ github.event_name == 'workflow_dispatch' && (github.event.inputs.pr_number == '' || github.event.inputs.pr_number == null) }}
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout PR or branch (PR event)
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Workload restore
         shell: pwsh
