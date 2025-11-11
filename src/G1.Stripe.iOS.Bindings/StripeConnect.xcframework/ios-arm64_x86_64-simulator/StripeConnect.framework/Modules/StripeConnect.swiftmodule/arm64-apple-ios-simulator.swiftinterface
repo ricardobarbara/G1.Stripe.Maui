@@ -1,0 +1,200 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name StripeConnect
+// swift-module-flags-ignorable:  -interface-compiler-version 6.1.2
+import AuthenticationServices
+import Foundation
+import JavaScriptCore
+import SafariServices
+@_exported import StripeConnect
+@_exported import StripeCore
+import StripeFinancialConnections
+import StripeUICore
+import Swift
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 15, *)
+public protocol AccountOnboardingControllerDelegate : AnyObject {
+  func accountOnboardingDidExit(_ accountOnboarding: StripeConnect.AccountOnboardingController)
+  func accountOnboarding(_ accountOnboarding: StripeConnect.AccountOnboardingController, didFailLoadWithError error: any Swift.Error)
+}
+@available(iOS 15, *)
+extension StripeConnect.AccountOnboardingControllerDelegate {
+  public func accountOnboardingDidExit(_ accountOnboarding: StripeConnect.AccountOnboardingController)
+  public func accountOnboarding(_ accountOnboarding: StripeConnect.AccountOnboardingController, didFailLoadWithError error: any Swift.Error)
+}
+@_hasMissingDesignatedInitializers @available(iOS 15, *)
+final public class AccountOnboardingController {
+  weak final public var delegate: (any StripeConnect.AccountOnboardingControllerDelegate)?
+  final public var title: Swift.String? {
+    get
+    set
+  }
+  final public func present(from viewController: UIKit.UIViewController, animated: Swift.Bool = true)
+  @objc deinit
+}
+public struct AccountCollectionOptions : Swift.Equatable, Swift.Codable {
+  public enum FieldOption : Swift.String, Swift.Codable {
+    case currentlyDue
+    case eventuallyDue
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum FutureRequirementOption : Swift.String, Swift.Codable {
+    case omit
+    case include
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum RequirementsOption : Swift.Equatable, Swift.Codable {
+    case only([Swift.String])
+    case exclude([Swift.String])
+    public func encode(to encoder: any Swift.Encoder) throws
+    public static func == (a: StripeConnect.AccountCollectionOptions.RequirementsOption, b: StripeConnect.AccountCollectionOptions.RequirementsOption) -> Swift.Bool
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public var fields: StripeConnect.AccountCollectionOptions.FieldOption
+  public var futureRequirements: StripeConnect.AccountCollectionOptions.FutureRequirementOption
+  public var requirements: StripeConnect.AccountCollectionOptions.RequirementsOption?
+  public init()
+  public static func == (a: StripeConnect.AccountCollectionOptions, b: StripeConnect.AccountCollectionOptions) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 15, *)
+extension StripeConnect.EmbeddedComponentManager {
+  public struct Appearance {
+    public enum TextTransform {
+      case none
+      case uppercase
+      case lowercase
+      case capitalize
+      public static func == (a: StripeConnect.EmbeddedComponentManager.Appearance.TextTransform, b: StripeConnect.EmbeddedComponentManager.Appearance.TextTransform) -> Swift.Bool
+      public func hash(into hasher: inout Swift.Hasher)
+      public var hashValue: Swift.Int {
+        get
+      }
+    }
+    public struct Typography {
+      public struct Style {
+        public var fontSize: CoreFoundation.CGFloat?
+        public var weight: UIKit.UIFont.Weight?
+        public var textTransform: StripeConnect.EmbeddedComponentManager.Appearance.TextTransform?
+        public init()
+      }
+      public var font: UIKit.UIFont?
+      public var fontSizeBase: CoreFoundation.CGFloat?
+      public var bodyMd: StripeConnect.EmbeddedComponentManager.Appearance.Typography.Style
+      public var bodySm: StripeConnect.EmbeddedComponentManager.Appearance.Typography.Style
+      public var headingXl: StripeConnect.EmbeddedComponentManager.Appearance.Typography.Style
+      public var headingLg: StripeConnect.EmbeddedComponentManager.Appearance.Typography.Style
+      public var headingMd: StripeConnect.EmbeddedComponentManager.Appearance.Typography.Style
+      public var headingSm: StripeConnect.EmbeddedComponentManager.Appearance.Typography.Style
+      public var headingXs: StripeConnect.EmbeddedComponentManager.Appearance.Typography.Style
+      public var labelMd: StripeConnect.EmbeddedComponentManager.Appearance.Typography.Style
+      public var labelSm: StripeConnect.EmbeddedComponentManager.Appearance.Typography.Style
+      public init()
+    }
+    public struct Colors {
+      public var primary: UIKit.UIColor?
+      public var text: UIKit.UIColor?
+      public var danger: UIKit.UIColor?
+      public var background: UIKit.UIColor?
+      public var secondaryText: UIKit.UIColor?
+      public var border: UIKit.UIColor?
+      public var actionPrimaryText: UIKit.UIColor?
+      public var actionSecondaryText: UIKit.UIColor?
+      public var offsetBackground: UIKit.UIColor?
+      public var formBackground: UIKit.UIColor?
+      public var formHighlightBorder: UIKit.UIColor?
+      public var formAccent: UIKit.UIColor?
+      public init()
+    }
+    public struct Button {
+      public var colorBackground: UIKit.UIColor?
+      public var colorBorder: UIKit.UIColor?
+      public var colorText: UIKit.UIColor?
+      public init()
+    }
+    public struct Badge {
+      public var colorBackground: UIKit.UIColor?
+      public var colorBorder: UIKit.UIColor?
+      public var colorText: UIKit.UIColor?
+      public init()
+    }
+    public struct CornerRadius {
+      public var base: CoreFoundation.CGFloat?
+      public var form: CoreFoundation.CGFloat?
+      public var button: CoreFoundation.CGFloat?
+      public var badge: CoreFoundation.CGFloat?
+      public var overlay: CoreFoundation.CGFloat?
+      public init()
+    }
+    public static let `default`: StripeConnect.EmbeddedComponentManager.Appearance
+    public var typography: StripeConnect.EmbeddedComponentManager.Appearance.Typography
+    public var colors: StripeConnect.EmbeddedComponentManager.Appearance.Colors
+    public var spacingUnit: CoreFoundation.CGFloat?
+    public var buttonPrimary: StripeConnect.EmbeddedComponentManager.Appearance.Button
+    public var buttonSecondary: StripeConnect.EmbeddedComponentManager.Appearance.Button
+    public var badgeNeutral: StripeConnect.EmbeddedComponentManager.Appearance.Badge
+    public var badgeSuccess: StripeConnect.EmbeddedComponentManager.Appearance.Badge
+    public var badgeWarning: StripeConnect.EmbeddedComponentManager.Appearance.Badge
+    public var badgeDanger: StripeConnect.EmbeddedComponentManager.Appearance.Badge
+    public var cornerRadius: StripeConnect.EmbeddedComponentManager.Appearance.CornerRadius
+    public init()
+  }
+}
+@available(iOS 15, *)
+extension StripeConnect.EmbeddedComponentManager {
+  public struct CustomFontSource {
+    public init(font: UIKit.UIFont, fileUrl: Foundation.URL) throws
+  }
+}
+@available(iOS 15, *)
+final public class EmbeddedComponentManager {
+  public init(apiClient: StripeCore.STPAPIClient = STPAPIClient.shared, appearance: StripeConnect.EmbeddedComponentManager.Appearance = .default, fonts: [StripeConnect.EmbeddedComponentManager.CustomFontSource] = [], fetchClientSecret: @escaping () async -> Swift.String?)
+  final public func update(appearance: StripeConnect.EmbeddedComponentManager.Appearance)
+  final public func createAccountOnboardingController(fullTermsOfServiceUrl: Foundation.URL? = nil, recipientTermsOfServiceUrl: Foundation.URL? = nil, privacyPolicyUrl: Foundation.URL? = nil, skipTermsOfServiceCollection: Swift.Bool? = nil, collectionOptions: StripeConnect.AccountCollectionOptions = .init()) -> StripeConnect.AccountOnboardingController
+  @objc deinit
+}
+public struct EmbeddedComponentError : Swift.Error, Swift.CustomDebugStringConvertible {
+  public enum ErrorType : Swift.String {
+    case apiConnectionError
+    case authenticationError
+    case accountSessionCreateError
+    case invalidRequestError
+    case rateLimitError
+    case apiError
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public let type: StripeConnect.EmbeddedComponentError.ErrorType
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+extension StripeConnect.AccountCollectionOptions.FieldOption : Swift.Equatable {}
+extension StripeConnect.AccountCollectionOptions.FieldOption : Swift.Hashable {}
+extension StripeConnect.AccountCollectionOptions.FieldOption : Swift.RawRepresentable {}
+extension StripeConnect.AccountCollectionOptions.FutureRequirementOption : Swift.Equatable {}
+extension StripeConnect.AccountCollectionOptions.FutureRequirementOption : Swift.Hashable {}
+extension StripeConnect.AccountCollectionOptions.FutureRequirementOption : Swift.RawRepresentable {}
+@available(iOS 15, *)
+extension StripeConnect.EmbeddedComponentManager.Appearance.TextTransform : Swift.Equatable {}
+@available(iOS 15, *)
+extension StripeConnect.EmbeddedComponentManager.Appearance.TextTransform : Swift.Hashable {}
+extension StripeConnect.EmbeddedComponentError.ErrorType : Swift.Equatable {}
+extension StripeConnect.EmbeddedComponentError.ErrorType : Swift.Hashable {}
+extension StripeConnect.EmbeddedComponentError.ErrorType : Swift.RawRepresentable {}
