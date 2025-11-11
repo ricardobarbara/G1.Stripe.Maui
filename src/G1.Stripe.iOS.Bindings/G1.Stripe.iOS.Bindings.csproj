@@ -23,7 +23,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<NativeReference Include="Stripe.Swift.Proxy.xcframework">
+		<NativeReference Include="stripe/Stripe.Swift.Proxy.xcframework">
 			<Kind>Framework</Kind>
 			<Frameworks></Frameworks>
 			<LinkerFlags></LinkerFlags>
@@ -33,7 +33,7 @@
 			<IsCxx>False</IsCxx>
 			<SmartLink>False</SmartLink>
 		</NativeReference>
-		<NativeReference Include="Stripe3DS2.xcframework">
+		<NativeReference Include="stripe/Stripe3DS2.xcframework">
 			<Kind>Framework</Kind>
 			<Frameworks></Frameworks>
 			<LinkerFlags></LinkerFlags>
@@ -43,7 +43,7 @@
 			<IsCxx>False</IsCxx>
 			<SmartLink>False</SmartLink>
 		</NativeReference>
-		<NativeReference Include="StripeApplePay.xcframework">
+		<NativeReference Include="stripe/StripeApplePay.xcframework">
 			<Kind>Framework</Kind>
 			<Frameworks></Frameworks>
 			<LinkerFlags></LinkerFlags>
@@ -53,7 +53,7 @@
 			<IsCxx>False</IsCxx>
 			<SmartLink>False</SmartLink>
 		</NativeReference>
-		<NativeReference Include="StripeCore.xcframework">
+		<NativeReference Include="stripe/StripeCore.xcframework">
 			<Kind>Framework</Kind>
 			<Frameworks></Frameworks>
 			<LinkerFlags></LinkerFlags>
@@ -63,7 +63,7 @@
 			<IsCxx>False</IsCxx>
 			<SmartLink>False</SmartLink>
 		</NativeReference>
-		<NativeReference Include="StripePayments.xcframework">
+		<NativeReference Include="stripe/StripePayments.xcframework">
 			<Kind>Framework</Kind>
 			<Frameworks></Frameworks>
 			<LinkerFlags></LinkerFlags>
@@ -73,7 +73,7 @@
 			<IsCxx>False</IsCxx>
 			<SmartLink>False</SmartLink>
 		</NativeReference>
-		<NativeReference Include="StripePaymentSheet.xcframework">
+		<NativeReference Include="stripe/StripePaymentSheet.xcframework">
 			<Kind>Framework</Kind>
 			<Frameworks></Frameworks>
 			<LinkerFlags></LinkerFlags>
@@ -83,7 +83,7 @@
 			<IsCxx>False</IsCxx>
 			<SmartLink>False</SmartLink>
 		</NativeReference>
-		<NativeReference Include="StripePaymentsUI.xcframework">
+		<NativeReference Include="stripe/StripePaymentsUI.xcframework">
 			<Kind>Framework</Kind>
 			<Frameworks></Frameworks>
 			<LinkerFlags></LinkerFlags>
@@ -93,7 +93,7 @@
 			<IsCxx>False</IsCxx>
 			<SmartLink>False</SmartLink>
 		</NativeReference>
-		<NativeReference Include="StripeUICore.xcframework">
+		<NativeReference Include="stripe/StripeUICore.xcframework">
 			<Kind>Framework</Kind>
 			<Frameworks></Frameworks>
 			<LinkerFlags></LinkerFlags>
